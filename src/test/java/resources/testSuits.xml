@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="UITestSuite" verbose="1" parallel="tests" thread-count="1">
+
+    <parameter name="overviewUrl" value="https://ws-test.keepit.com/desktop/#/overview"></parameter>
+    <parameter name="signInUrl" value="https://ws-test.keepit.com/desktop/#/signin"></parameter>
+    <parameter name="url" value="https://ws-test.keepit.com"></parameter>
+    <parameter name="userName" value="automation@keepitqa.com"></parameter>
+    <parameter name="password" value="E#*b2wGIbFHz"></parameter>
+    <parameter name="welcomeMessage" value="Welcome to Keepit!"></parameter>
+    <parameter name="signInMicrosoftMessage" value="Sign in with your Microsoft Global Admin account"></parameter>
+
+    <test name="PositiveScenarioTest">
+        <classes>
+            <class name="com.example.task.tests.OverviewPageTests" />
+        </classes>
+    </test>
+</suite>
