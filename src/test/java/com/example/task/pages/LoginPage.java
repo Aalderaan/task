@@ -2,6 +2,8 @@ package com.example.task.pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
+
 import java.time.Duration;
 import static com.codeborne.selenide.Selenide.$x;
 
@@ -22,6 +24,7 @@ public class LoginPage {
      *  type the user's email(the argument) to the field
      */
 
+    @Step("Enter email")
     public void enterEmail(String email) {
         emailField.shouldBe(Condition.visible, Duration.ofSeconds(8)).click();
         emailField.sendKeys(email);
@@ -33,6 +36,7 @@ public class LoginPage {
      *  type the user's password(the argument) to the field
      */
 
+    @Step("Enter password")
     public void enterPassword(String password) {
         passwordField.shouldBe(Condition.visible).click();
         passwordField.sendKeys(password);
@@ -44,6 +48,7 @@ public class LoginPage {
      *  click the signInButton and return the instance of the OverviewPage.
      */
 
+    @Step("Click sign in button")
     public OverviewPage clickSigninButton() {
         signInButton.shouldBe(Condition.visible, Condition.enabled).click();
         return new OverviewPage();

@@ -1,6 +1,8 @@
 package com.example.task.pages;
 
 import com.codeborne.selenide.*;
+import io.qameta.allure.Step;
+
 import static com.codeborne.selenide.Selenide.*;
 import java.time.Duration;
 
@@ -21,6 +23,8 @@ public class OverviewPage {
     /**
      * With the 'getWelcomeMessageText' method we get text of SelenideElement after we did sign in
      */
+
+    @Step("Get welcome message text")
     public String getWelcomeMessageText() {
         return welcomeMessage.getText();
     }
@@ -28,6 +32,8 @@ public class OverviewPage {
     /**
      * With the 'getCurrentUrl' method we get current url to check if it is as expected
      */
+
+    @Step("Get current url")
     public String getCurrentUrl() {
         return WebDriverRunner.getWebDriver().getCurrentUrl();
     }
@@ -38,6 +44,8 @@ public class OverviewPage {
      *  click the 'clickAddConnectorButton'.
      */
 
+
+    @Step("Click add connector button")
     public void clickAddConnectorButton() {
         addConnectorButton.shouldBe(Condition.visible, Condition.enabled).click();
     }

@@ -19,7 +19,7 @@ public class Base {
     @BeforeClass
     public void setUpAll() {
         Configuration.browserSize = "1280x800";
-        SelenideLogger.addListener("allure", new AllureSelenide());
+        SelenideLogger.addListener("allure", new AllureSelenide().screenshots(true));
     }
 
 
